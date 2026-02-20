@@ -1,29 +1,14 @@
 version: 2.1
-name: CI
-
-# Controls when the workflow will run, adapt to your own needs
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 jobs:
-  scan:
-    runs-on: ubuntu-latest
-    # Permissions needed if using the optional github/codeql-action/upload-sarif step
-    permissions:
-      # required for all workflows
-      security-events: write
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
-    container:
-      image: us-central1-docker.pkg.dev/prod-scandal-us/datatheorem-sast/datatheorem-sast:latest
-      env:
-        DT_SAST_API_KEY: "BeXOKaykD+bTYVt17SQTGGMhjd3gFuX/jsQf3yfflH8="
+  run_my_command:
+    # 1. On définit l'image Docker à utiliser
+    docker:
+      - image: us-central1-docker.pkg.dev/prod-scandal-us/datatheorem-sast/datatheorem-sast:latest
+
+    # 2. On définit les variables d'environnement pour ce job
+    environment:
+        DT_SAST_API_KEY: BeXOKaykD+bTYVt17SQTGGMhjd3gFuX/jsQf3yfflH8=
         DT_SAST_REPOSITORY_NAME: ${{ github.event.repository.full_name }}
         DT_SAST_REPOSITORY_PLATFORM: GITHUB
         DT_SAST_REPOSITORY_ID: ${{ github.event.repository.id }}
@@ -31,22 +16,18 @@ jobs:
         DT_SAST_REPOSITORY_DEFAULT_BRANCH_NAME: ${{ github.event.repository.default_branch }}
         DT_SAST_SCAN_TIMEOUT: 600
         DT_SAST_OUTPUT_DIR: ./
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Start Data Theorem SAST Scan
-        run: data_theorem_sast_analyzer scan ./
-      # Optional: output sarif as a Github artifact
-      - uses: actions/upload-artifact@v4
-        with:
-          name: dt-sast-scan-result
-          path: ./scan-results-sarif.json
-      # Optional: Upload output sarif to Github Code Scanning
-      - name: Upload SARIF to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: ./scan-results-sarif.json
+      - checkout # Récupère ton code depuis GitHub
+      
+      - run:
+          name: "Exécution de ma commande personnalisée"
+          command: |
+            echo "Le job est lancé dans l'environnement : t
+            # Remplace la ligne ci-dessous par ta vraie commande
+            data_theorem_sast_analyzer scan ./
 
 workflows:
-  say-hello-workflow:
+  mon_workflow:
     jobs:
-      - scan
+      - run_my_command
