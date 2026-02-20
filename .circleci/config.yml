@@ -2,9 +2,15 @@ version: 2.1
 
 jobs:
   say-hello:
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
     docker:
       - image: us-central1-docker.pkg.dev/dev-scandal-us/datatheorem-sast-dev/datatheorem-sast-dev:latest
-        env:
+        environment:
           DT_SAST_API_KEY: "BeXOKaykD+bTYVt17SQTGGMhjd3gFuX/jsQf3yfflH8="
           DT_SAST_REPOSITORY_NAME: ${{ github.event.repository.full_name }}
           DT_SAST_REPOSITORY_PLATFORM: GITHUB
