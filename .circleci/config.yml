@@ -1,3 +1,4 @@
+version: 2.1
 name: CI
 
 # Controls when the workflow will run, adapt to your own needs
