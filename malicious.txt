@@ -9,7 +9,7 @@
       <snapshots>
         <enabled>true</enabled>
         <updatePolicy>always</updatePolicy>
-        <checksumPolicy>fail</checksumPolicy>
+        <checksumPolicy>failed</checksumPolicy>
       </snapshots>
       <name>Nexus Snapshots</name>
       <id>snapshots-repo</id>
