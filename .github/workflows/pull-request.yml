@@ -1,0 +1,28 @@
+name: CI
+
+# Controls when the workflow will run, adapt to your own needs
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  pull_request
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    container:
+      image: us-central1-docker.pkg.dev/dev-scandal-us/datatheorem-sast-dev/datatheorem-sast-dev:latest
+      env: 
+        DT_SAST_API_KEY: nI8VHAYVq2YAhgEpxkw3j1is2wjueTiwfds1C2LF3ww=
+        DT_SAST_REPOSITORY_NAME: ${{ github.event.repository.full_name }}
+        DT_SAST_REPOSITORY_PLATFORM: GITHUB
+        DT_SAST_REPOSITORY_ID: ${{ github.event.repository.id }}
+        DT_SAST_REPOSITORY_HTML_URL: ${{ github.event.repository.html_url }}
+        DT_SAST_REPOSITORY_DEFAULT_BRANCH_NAME: ${{ github.event.repository.default_branch }}
+        DT_SAST_SCAN_HEAD_REF: "refs/remotes/origin/${{ github.head_ref }}"
+        DT_SAST_SCAN_TARGET_REF: "refs/remotes/origin/${{ github.base_ref }}"
+        DT_SAST_FAIL_MODE: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # IMPORTANT: Needed because by default, actions/checkout@v4 doesn't load the full git history/refs
+      - name: Start Data Theorem SAST Scan
+        run: data_theorem_sast_analyzer scan ./
