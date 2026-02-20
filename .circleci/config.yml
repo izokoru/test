@@ -6,13 +6,13 @@ jobs:
       - image: us-central1-docker.pkg.dev/dev-scandal-us/datatheorem-sast-dev/datatheorem-sast-dev:latest
         environment:
           DT_SAST_API_KEY: l2qiJs2QnABjAla5fpy6FRr/yUOD7/PUn7AbQFW2/1A=
-          DT_SAST_REPOSITORY_NAME: "${{ github.event.repository.full_name }}"
+          DT_SAST_REPOSITORY_NAME: "github.event.repository.full_name"
           DT_SAST_REPOSITORY_PLATFORM: GITHUB
-          DT_SAST_REPOSITORY_ID: "${{ github.event.repository.id }}"
-          DT_SAST_REPOSITORY_HTML_URL: "${{ github.event.repository.html_url }}"
-          DT_SAST_REPOSITORY_DEFAULT_BRANCH_NAME: "${{ github.event.repository.default_branch }}"
-          DT_SAST_SCAN_HEAD_REF: "refs/remotes/origin/${{ github.ref_name }}"
-          DT_SAST_SCAN_TARGET_REF: "refs/remotes/origin/${{ github.event.inputs.diff_scan_target_ref }}"
+          DT_SAST_REPOSITORY_ID: "github.event.repository.id"
+          DT_SAST_REPOSITORY_HTML_URL: "github.event.repository.html_url"
+          DT_SAST_REPOSITORY_DEFAULT_BRANCH_NAME: "github.event.repository.default_branch"
+          DT_SAST_SCAN_HEAD_REF: "refs/remotes/origin/github.ref_name"
+          DT_SAST_SCAN_TARGET_REF: "refs/remotes/origin/github.event.inputs.diff_scan_target_ref"
     steps:
       - checkout
       - run:
