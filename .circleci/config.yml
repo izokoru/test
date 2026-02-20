@@ -23,7 +23,7 @@ jobs:
       - run:
           name: "Exécution de ma commande personnalisée"
           command: |
-            echo "Le job est lancé dans l'environnement : t
+            echo "Le job est lancé dans l'environnement : t"
             # Remplace la ligne ci-dessous par ta vraie commande
             data_theorem_sast_analyzer scan ./
 
