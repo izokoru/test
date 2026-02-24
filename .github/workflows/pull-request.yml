@@ -25,4 +25,4 @@ jobs:
         with:
           fetch-depth: 0  # IMPORTANT: Needed because by default, actions/checkout@v4 doesn't load the full git history/refs
       - name: Start Data Theorem SAST Scan
-        run: pwd && data_theorem_sast_analyzer scan ./
+        run: pwd && data_theorem_sast_analyzer scan .
