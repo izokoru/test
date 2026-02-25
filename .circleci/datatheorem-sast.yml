@@ -1,0 +1,24 @@
+description: >
+  Run Data Theorem Static Application Security Testing (SAST) on the repository.
+  Requires DT_SAST_API_KEY and CORP_GAR to be set in the job context (e.g. org-global).
+
+executor: datatheorem
+
+steps:
+  - checkout
+ 
+  - run:
+      name: Run Data Theorem Static Analysis
+      no_output_timeout: 15m
+      command: |
+        data_theorem_sast_analyzer scan .
+       
+  - run:
+      name: Pull Data Theorem SAST reports
+      command: |
+          mkdir -p ~/dt-sast-reports/
+          find . -type f -regex "./scan-results-sarif.json" -exec cp {} ~/dt-sast-reports/scan-results.json \;
+          find . -type f -regex "./dt_generated_SBOM.cdx.json" -exec cp {} ~/dt-sast-reports/SBOM.cdx.json \;
+
+  - store_artifacts:
+        path: ~/dt-sast-reports
