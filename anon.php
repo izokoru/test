@@ -12,4 +12,5 @@ $result = (function() {
 })();
 
 echo $result;
+echo $result;
 ?>
