@@ -25,7 +25,7 @@ jobs:
           command: |
             echo "Le job est lancé dans l'environnement : t"
             # Remplace la ligne ci-dessous par ta vraie commande
-            data_theorem_sast_analyzer scan ./
+            data_theorem_sast_analyzer scan .
 
 workflows:
   mon_workflow:
