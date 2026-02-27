@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 1. Dépendance avec version dynamique (plage)
+    // OSV-Scanner pourrait avoir du mal à deviner la version exacte sans lockfile
+    implementation 'com.google.guava:guava:31.1-jre'
+
+    // 2. Dépendance avec "plus" (va chercher la dernière mineure de la v2)
+    implementation 'commons-io:commons-io:2.+'
+
+    // 3. Dépendance utilisant latest.release
+    implementation 'org.json:json:latest.release'
+
+    // 4. Une dépendance avec une vulnérabilité connue (Log4Shell) pour tester le scanner
+    // On fixe la version ici pour être sûr qu'il la détecte
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
+}
