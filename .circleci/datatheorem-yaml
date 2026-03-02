@@ -1,0 +1,31 @@
+description: >
+Executor for Data Theorem SAST (Static Application Security Testing).
+Uses the official Data Theorem scanner image; requires DT_SAST_API_KEY in context.
+
+docker:
+  - image: us-central1-docker.pkg.dev/dev-scandal-us/datatheorem-sast-dev/datatheorem-sast-dev:latest
+    environment:
+      DT_SAST_REPOSITORY_NAME: "test"
+      DT_SAST_REPOSITORY_HTML_URL: ${{ github.event.repository.full_name }}
+      DT_SAST_SCANNED_BRANCH: ${CIRCLE_BRANCH}
+      DT_SAST_API_KEY: nI8VHAYVq2YAhgEpxkw3j1is2wjueTiwfds1C2LF3ww=
+      DT_SAST_REPOSITORY_PLATFORM: "GITHUB"
+      DT_SAST_REPOSITORY_ID: ${{ github.event.repository.id }}
+      DT_SAST_REPOSITORY_DEFAULT_BRANCH_NAME: "main"
+      DT_SAST_OUTPUT_DIR: ./
+
+parameters:
+  resource_class:
+    default: large
+    description: Configure the executor resource class
+    enum:
+      - small
+      - medium
+      - medium+
+      - large
+      - xlarge
+      - 2xlarge
+      - 2xlarge+
+    type: enum
+
+resource_class: <<parameters.resource_class>>
