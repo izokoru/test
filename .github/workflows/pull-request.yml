@@ -25,5 +25,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # IMPORTANT: Needed because by default, actions/checkout@v4 doesn't load the full git history/refs
+      - name: Debug Container Filesystem
+        run: |
+          echo "Var : $OSV_SCANNER_LOCAL_DB_CACHE_DIRECTORY"
+          ls -R $OSV_SCANNER_LOCAL_DB_CACHE_DIRECTORY || echo "Folder not found"
       - name: Start Data Theorem SAST Scan
         run: pwd && data_theorem_sast_analyzer scan .
