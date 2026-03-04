@@ -8,11 +8,11 @@ plugins {
 group = 'com.example'
 // Do not change this version name.
 // Otherwise we have different versions/copies in Jenkins workspace and the deployment job will not deploy the right application version.
-version = '1.0.0-SNAPSHOT'
+version = '1.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(26)
     }
 }
 
@@ -33,6 +33,7 @@ ext {
 jar {
     enabled = false
 }
+
 
 dependencies {
     //implementation 'org.springframework.boot:spring-boot-starter-actuator'
