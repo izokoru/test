@@ -7,4 +7,3 @@ org.apache.logging.log4j:log4j-core:2.14.1=compileClasspath,runtimeClasspath
 org.json:json:20231013=compileClasspath,runtimeClasspath
 com.fasterxml.jackson.module:jackson-module-parameter-names:2.19.2=compileClasspath,productionRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 empty=
-
