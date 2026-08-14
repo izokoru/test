@@ -20,6 +20,7 @@ jobs:
         DT_SAST_SCAN_HEAD_REF: "refs/remotes/origin/${{ github.head_ref }}"
         DT_SAST_SCAN_TARGET_REF: "refs/remotes/origin/${{ github.base_ref }}"
         DT_SAST_FAIL_MODE: true
+        DT_SAST_OFFLINE_MODE: true
     steps:
       - uses: actions/checkout@v4
         with:
