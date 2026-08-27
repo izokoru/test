@@ -9,9 +9,9 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     container:
-      image: us-central1-docker.pkg.dev/dev-scandal-us/datatheorem-sast-dev/datatheorem-sast-dev:latest
+      image: us-central1-docker.pkg.dev/prod-scandal-us/datatheorem-sast/datatheorem-sast:latest
       env: 
-        DT_SAST_API_KEY: nI8VHAYVq2YAhgEpxkw3j1is2wjueTiwfds1C2LF3ww=
+        DT_SAST_API_KEY: espsFsexWa4OJcZ2JI2KhpqGwRhsUl3E4aMteiBtT98=
         DT_SAST_REPOSITORY_NAME: ${{ github.event.repository.full_name }}
         DT_SAST_REPOSITORY_PLATFORM: GITHUB
         DT_SAST_REPOSITORY_ID: ${{ github.event.repository.id }}
