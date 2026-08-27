@@ -9,5 +9,6 @@ public class JavaObfuscationAnotestingTest {
                         w -> x + y + z + w;
 
         System.out.println(f.apply(1).apply(2).apply(3).apply(4));  // 10
+        // 2
     }
 }
