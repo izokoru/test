@@ -1,0 +1,5 @@
+purpose: to test Envoy base image severity issue called http2shell (template 005037)
+languages:
+  - dockerfile
+cves:
+  - CVE-2026-111497
