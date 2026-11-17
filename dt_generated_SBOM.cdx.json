@@ -1,0 +1,27 @@
+{
+  "dependencies": [
+    {
+      "ref": "BomRef.014912799709945523.8695086363800668"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "BomRef.014912799709945523.8695086363800668",
+      "name": "envoy-brotli-test-01",
+      "publisher": "dt-lab",
+      "type": "application"
+    },
+    "timestamp": "2026-11-17T04:34:57.162869+00:00",
+    "tools": [
+      {
+        "name": "Data Theorem Analyzer Engine",
+        "vendor": "Data Theorem"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:add4f40b-f12a-4cab-a4f9-7e369bea56f9",
+  "version": 1,
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6"
+}
