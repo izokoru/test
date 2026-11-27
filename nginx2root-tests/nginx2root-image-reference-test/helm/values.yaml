@@ -1,0 +1,8 @@
+# Vulnerable: Helm values with repository and tag keys
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "1.25.4"
+service:
+  type: ClusterIP
+  port: 443

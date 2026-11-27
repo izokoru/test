@@ -1,0 +1,27 @@
+{
+  "dependencies": [
+    {
+      "ref": "BomRef.6300544347983472.34155659767617363"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "BomRef.6300544347983472.34155659767617363",
+      "name": "nginx2root-dockerfile-test-01",
+      "publisher": "dt-lab",
+      "type": "application"
+    },
+    "timestamp": "2026-11-27T06:34:29.114882+00:00",
+    "tools": [
+      {
+        "name": "Data Theorem Analyzer Engine",
+        "vendor": "Data Theorem"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:f2a419a3-fab2-4f9f-a5a6-5d22c0efff0d",
+  "version": 1,
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6"
+}
