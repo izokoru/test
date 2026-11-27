@@ -8,3 +8,4 @@ COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 FROM nginx:1.30
 # FROM nginx:1.26.0
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+
