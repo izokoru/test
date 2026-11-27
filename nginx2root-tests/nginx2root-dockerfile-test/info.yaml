@@ -1,0 +1,5 @@
+purpose: to test nginx base images and nginx source builds in Dockerfiles severity issue called NGINX2Root (template 005042)
+languages:
+  - dockerfile
+cves:
+  - CVE-2026-123007

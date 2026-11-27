@@ -1,0 +1,6 @@
+purpose: to test nginx image references in Kubernetes, Helm, Kustomize, Docker Compose and Terraform severity issue called NGINX2Root (template 005043)
+languages:
+  - yaml
+  - terraform
+cves:
+  - CVE-2026-123007

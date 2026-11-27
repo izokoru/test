@@ -1,0 +1,5 @@
+purpose: to test that NGINX2Root (template 005043) is not reported when no nginx configuration turns on HTTP/2, HTTP/3, a resolver with a variable proxy_pass or the mail proxy; expect no 005043 findings
+languages:
+  - yaml
+cves:
+  - CVE-2026-123007

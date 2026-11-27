@@ -1,0 +1,21 @@
+# Not reported: fixed releases and moving tags that select a fixed release
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-fixed
+spec:
+  template:
+    spec:
+      containers:
+        - name: stable-release
+          image: nginx:1.30.7-alpine
+        - name: mainline-release
+          image: nginx:1.31.9
+        - name: stable-branch
+          image: nginx:1.30
+        - name: stable-tag
+          image: nginx:stable-alpine
+        - name: mainline-tag
+          image: nginx:mainline
+        - name: f5-ingress
+          image: nginx/nginx-ingress:5.2.1

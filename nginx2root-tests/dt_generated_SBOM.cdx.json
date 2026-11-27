@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "bom-ref": "pkg:github/actions/checkout@v4?package-id=6dc7737569ec876e",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "name": "actions/checkout",
+      "properties": [
+        {
+          "name": "is-ai-dependency",
+          "value": "False"
+        },
+        {
+          "name": "location:file_path",
+          "value": "/nginx2root-image-reference-test/.github/workflows/ci.yml"
+        }
+      ],
+      "purl": "pkg:github/actions/checkout@v4",
+      "type": "library",
+      "version": "v4"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "BomRef.003042829422763682.14028069644352614"
+    },
+    {
+      "ref": "pkg:github/actions/checkout@v4?package-id=6dc7737569ec876e"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "BomRef.003042829422763682.14028069644352614",
+      "name": "<my_repo>",
+      "publisher": "<my_org>",
+      "type": "application"
+    },
+    "timestamp": "2026-11-27T09:53:11.524446+00:00",
+    "tools": [
+      {
+        "name": "Data Theorem Analyzer Engine",
+        "vendor": "Data Theorem"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:52492c67-0e2c-4206-9bf6-9c1a6b54ee43",
+  "version": 1,
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6"
+}
